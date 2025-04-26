@@ -1,0 +1,19 @@
+[Unit]
+
+Description=Vestige tools, automation utilities
+
+After=network.target
+
+
+[Service]
+
+ExecStart=/bin/bash /usr/local/bin/vestige-tools/vestige-tools/init.sh
+
+Restart=always
+
+RestartSec=20
+
+
+[Install]
+
+WantedBy=multi-user.target

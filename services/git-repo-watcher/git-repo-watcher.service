@@ -7,7 +7,7 @@ After=network.target
 
 [Service]
 
-ExecStart=/bin/bash /usr/local/bin/vestige-tools/git-repo-watcher/start.sh
+ExecStart=/bin/bash /usr/local/bin/vestige-tools/git-repo-watcher/init.sh
 
 Restart=always
 
