@@ -7,7 +7,7 @@ After=network.target
 
 [Service]
 
-ExecStart=/bin/bash /usr/local/bin/vestige-tools/vestige-tools/init.sh
+ExecStart=/bin/bash /usr/local/bin/vestige-tools/services/vestige-tools/init.sh
 
 Restart=always
 
