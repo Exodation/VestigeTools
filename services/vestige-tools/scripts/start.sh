@@ -5,6 +5,7 @@ for servicedir in /usr/local/bin/vestige-tools/*; do
   if [ -d "$servicedir" ]; then
     service_file=$(find "$servicedir" -maxdepth 1 -name "*.service")
     
+    echo $service_file
     if [ -f "$service_file" ]; then
 
       # Install the service
