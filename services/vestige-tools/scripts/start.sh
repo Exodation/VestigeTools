@@ -1,9 +1,9 @@
 
 echo "Checking services..."
 
-for servicedir in /usr/local/bin/vestige-tools/*; do
+for servicedir in /usr/local/bin/vestige-tools/services/*; do
   echo $servicedir
-  
+
   if [ -d "$servicedir" ]; then
     service_file=$(find "$servicedir" -maxdepth 1 -name "*.service")
     
