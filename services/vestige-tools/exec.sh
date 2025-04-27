@@ -15,5 +15,6 @@ if [[ -f "$SCRIPT_PATH" ]]; then
     bash "$SCRIPT_PATH"
 else
     echo "Error: No script found for the command '$COMMAND'."
+    echo "Searched for '$COMMAND'."
     exit 1
 fi

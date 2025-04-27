@@ -2,7 +2,6 @@
 echo "Checking services..."
 
 for servicedir in /opt/VestigeTools/services/*; do
-  echo $servicedir
 
   if [ -d "$servicedir" ]; then
     service_file=$(find "$servicedir" -maxdepth 1 -name "*.service")
