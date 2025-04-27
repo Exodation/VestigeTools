@@ -22,6 +22,11 @@ for servicedir in /usr/local/bin/vestige-tools/services/*; do
       # Start the service
       echo "Starting service: $(basename $service_file)"
       sudo systemctl start "$(basename $service_file)"
+    else
+        init_sh=$(find "$servicedir" -maxdepth 1 -name "init.sh")
+        if [ -f "$init_sh" ]; then
+            ./$init_sh
+        fi
     fi
   fi
 done
