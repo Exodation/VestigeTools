@@ -1,8 +1,8 @@
 [Unit]
-Description=Run MYSQL Backup every 30 seconds
+Description=Run MYSQL Backup every 1 hour
 
 [Timer]
-OnUnitActiveSec=30s
+OnCalendar=hourly
 Unit=mysql-backup.service
 
 [Install]
