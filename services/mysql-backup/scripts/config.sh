@@ -15,13 +15,14 @@ if [ ! -f "$CONFIG_FILE" ]; then
     read -p "Enter MySQL database name: " MYSQL_DATABASE
 
     # Create or update the JSON configuration file
-    cat <<EOF > "$CONFIG_FILE"
-{
-  "MYSQL_USER": "$MYSQL_USER",
-  "MYSQL_PASSWORD": "$MYSQL_PASSWORD",
-  "MYSQL_DATABASE": "$MYSQL_DATABASE"
-}
-EOF
+    config_content='
+    {
+        "MYSQL_USER": "$MYSQL_USER",
+        "MYSQL_PASSWORD": "$MYSQL_PASSWORD",
+        "MYSQL_DATABASE": "$MYSQL_DATABASE"
+    }'
+
+    echo "$config_content" > $CONFIG_FILE
 
     echo "Configuration saved to $CONFIG_FILE"
 else
