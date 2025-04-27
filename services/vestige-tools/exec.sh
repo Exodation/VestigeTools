@@ -1,3 +1,6 @@
+#!/bin/bash
+
+SCRIPTS_DIR=$(dirname "$0")
 COMMAND="$1"
 SCRIPT_PATH="$SCRIPTS_DIR/$COMMAND.sh"
 
