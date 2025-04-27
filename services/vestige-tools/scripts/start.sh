@@ -35,7 +35,7 @@ for servicedir in /opt/VestigeTools/services/*; do
         else
             exec_sh=$(find "$servicedir" -maxdepth 1 -name "exec.sh")
             if [ -f "$exec_sh" ]; then
-              ./$COMMAND_BUILD $exec_sh $service_name
+              .$COMMAND_BUILD $exec_sh $service_name
             fi
         fi
     fi
