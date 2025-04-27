@@ -2,9 +2,10 @@
 
 echo "Installing vestige tools..."
 
-rm -rf /usr/local/bin/vestige-tools
-mkdir -p /usr/local/bin/vestige-tools
+touch /usr/local/bin/vestige-tools
 
-cp -r ./ /usr/local/bin/vestige-tools
+chmod +x ./services/vestige-tools/scripts/start.sh
 
-cd /usr/local/bin/vestige-tools
+ln -s /opt/vestige-tools/services/vestige-tools/exec.sh /usr/local/bin/vestige-tools
+
+./services/vestige-tools/scripts/start.sh
