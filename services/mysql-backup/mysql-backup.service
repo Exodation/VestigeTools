@@ -1,0 +1,19 @@
+[Unit]
+
+Description=MYSQL database cloud backups
+
+After=network.target
+
+
+[Service]
+
+ExecStart=/bin/bash /opt/VestigeTools/services/mysql-backup/init.sh
+
+Restart=always
+
+RestartSec=60
+
+
+[Install]
+
+WantedBy=multi-user.target
