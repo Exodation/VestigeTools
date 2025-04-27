@@ -1,0 +1,9 @@
+[Unit]
+Description=Run MYSQL Backup every 30 seconds
+
+[Timer]
+OnUnitActiveSec=30s
+Unit=mysql-backup.service
+
+[Install]
+WantedBy=timers.target

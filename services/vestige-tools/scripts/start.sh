@@ -8,6 +8,7 @@ for servicedir in /opt/VestigeTools/services/*; do
   if [ -d "$servicedir" ]; then
     service_file=$(find "$servicedir" -maxdepth 1 -name "*.service")
     service_name=$(basename "$servicedir")
+    timer_file=$(find "$servicedir" -maxdepth 1 -name "*.timer")
 
     if [ -f "$service_file" ]; then
       # START SERVICES
@@ -17,12 +18,19 @@ for servicedir in /opt/VestigeTools/services/*; do
       # Install the service
       echo "Installing service $service_file..."
       cp "$service_file" /etc/systemd/system/
+      
+      # Enable and start the service
+      echo "Starting service $service_file..."
 
-      # Enable the service
       sudo systemctl enable "$service_name"
-
-      # Start the service
       sudo systemctl start "$service_name"
+
+      # Install, enable and start timer, if there is one
+      if [ -f "$timer_file" ]; then
+        sudo cp "$timer_file" /etc/systemd/system/
+        sudo systemctl enable "$service_name.timer"
+        sudo systemctl start "$service_name.timer"
+      fi
 
       echo "Started service $service_name"
     else

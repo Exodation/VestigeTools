@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs a Git repo check every 20 secs
+
+[Timer]
+OnUnitActiveSec=20s
+Unit=git-repo-watcher.service
+
+[Install]
+WantedBy=timers.target
