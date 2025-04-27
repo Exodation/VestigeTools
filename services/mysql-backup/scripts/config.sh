@@ -14,12 +14,12 @@ echo "Setting up MySQL configuration..."
     read -p "Enter MySQL database name: " MYSQL_DATABASE
 
     # Create or update the JSON configuration file
-    config_content='
+    config_content="
     {
         "MYSQL_USER": "$MYSQL_USER",
         "MYSQL_PASSWORD": "$MYSQL_PASSWORD",
         "MYSQL_DATABASE": "$MYSQL_DATABASE"
-    }'
+    }"
 
     echo "$config_content" > $CONFIG_FILE
 

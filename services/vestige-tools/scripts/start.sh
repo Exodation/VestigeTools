@@ -20,7 +20,7 @@ for servicedir in /opt/VestigeTools/services/*; do
       cp "$service_file" /etc/systemd/system/
       
       # Enable and start the service
-      echo "Starting service $service_file..."
+      echo "Starting service $service_name..."
 
       sudo systemctl enable "$service_name"
       sudo systemctl start "$service_name"
@@ -47,7 +47,6 @@ for servicedir in /opt/VestigeTools/services/*; do
     # CUSTOM COMMANDS
     exec_sh=$(find "$servicedir" -maxdepth 1 -name "exec.sh")
     if [ -f "$exec_sh" ]; then
-      echo "Attemping $service_name"
       $COMMAND_BUILD $exec_sh $service_name
     fi
   fi
