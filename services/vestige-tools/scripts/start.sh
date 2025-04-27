@@ -1,7 +1,7 @@
 
 echo "Checking services..."
 
-for servicedir in /opt/vestige-tools/services/*; do
+for servicedir in /opt/VestigeTools/services/*; do
   echo $servicedir
 
   if [ -d "$servicedir" ]; then
