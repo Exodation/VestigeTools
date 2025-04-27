@@ -5,8 +5,7 @@ cd /opt/VestigeTools/services/mysql-backup/
 CONFIG_FILE="config.json"
 
 # Check if the config file already exists
-if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Setting up MySQL configuration..."
+echo "Setting up MySQL configuration..."
 
     # Prompt for MySQL credentials
     read -p "Enter MySQL user: " MYSQL_USER
@@ -25,6 +24,3 @@ if [ ! -f "$CONFIG_FILE" ]; then
     echo "$config_content" > $CONFIG_FILE
 
     echo "Configuration saved to $CONFIG_FILE"
-else
-    echo "$CONFIG_FILE already exists. No changes made."
-fi
