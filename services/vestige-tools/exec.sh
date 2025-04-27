@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SCRIPTS_DIR=$(dirname "$0")
+SCRIPTS_DIR=$(dirname "$(realpath "$0")")
 COMMAND="$1"
-SCRIPT_PATH="$SCRIPTS_DIR/$COMMAND.sh"
+SCRIPT_PATH="$SCRIPTS_DIR/scripts/$COMMAND.sh"
 
 if [[ -z "$COMMAND" ]]; then
     echo "Usage: $0 {command_name}"
