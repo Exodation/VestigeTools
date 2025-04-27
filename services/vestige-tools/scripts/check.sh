@@ -1,1 +1,1 @@
-echo 'Runnin fine'
+echo 'Vestige tools running fine'
